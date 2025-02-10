@@ -81,8 +81,6 @@ jobs:
     - name: Sync AWS Bucket
       working-directory: build
       run: |
-          #!/bin/bash
-
           # Define all possible languages
           # EN all time build by default and not specifyed in this array
           ALL_LANGS=("zh-CN")
