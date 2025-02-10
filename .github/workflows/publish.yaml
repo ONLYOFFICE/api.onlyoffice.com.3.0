@@ -89,15 +89,23 @@ jobs:
 
           # Languages that were actually built
           BUILT_LANGS=("en")  # Modify this dynamically
-
+          # Add dynamically built languages
           [[ "$CN" == "true" ]] && BUILT_LANGS+="zh-CN"
 
           # Generate exclusion flags
           EXCLUDE_FLAGS=()
           for lang in "${ALL_LANGS[@]}"; do
-             if [[ ! " ${BUILT_LANGS[@]} " =~ " ${lang} " ]]; then
-               EXCLUDE_FLAGS+=("--exclude \"${lang}/*\"")
-             fi
+            should_exclude=true
+            for lg in "${BUILT_LANGS[@]}"; do
+              if [[ "$lang" == "$lg" ]]; then
+                should_exclude=false
+                break  # Stop checking once we find a match
+              fi
+            done
+
+            if [[ "$should_exclude" == true ]]; then
+              EXCLUDE_FLAGS+=("--exclude \"${lang}/*\"")
+            fi
           done
 
           # Convert array to string
