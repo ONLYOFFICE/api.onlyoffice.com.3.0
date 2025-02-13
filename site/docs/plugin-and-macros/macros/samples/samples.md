@@ -36,6 +36,24 @@ In this example we are replacing words in the text editor.
 
 [More](text-document-editor/replace-words-in-document.md)
 
+### Highlight predefined keywords
+
+In this example we are highlighting predefined keywords in the text editor.
+
+[More](text-document-editor/highlight-predefined-keywords.md)
+
+### Remove custom formatting
+
+In this example we are removing all custom formatting and applying a default style.
+
+[More](text-document-editor/remove-custom-formatting.md)
+
+### Items list to table
+
+In this example we are converting a list of items into a table
+
+[More](text-document-editor/items-list-to-table.md)
+
 ## Spreadsheet editor
 
 ### Add chart
